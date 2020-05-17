@@ -6,6 +6,7 @@ import { NgForm } from '@angular/forms';
 import { UserService } from 'src/app/_services/user.service';
 import { AuthService } from 'src/app/_services/auth.service';
 
+
 @Component({
   selector: 'app-member-edit',
   templateUrl: './member-edit.component.html',
@@ -40,7 +41,7 @@ export class MemberEditComponent implements OnInit {
       this.editForm.reset(this.user);
     }, error => {
       this.alertify.error(error);
-    })
+    });
 
   }
 
