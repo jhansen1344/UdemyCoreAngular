@@ -9,7 +9,7 @@ import {PaginationModule} from 'ngx-bootstrap/pagination';
 import {ButtonsModule} from 'ngx-bootstrap/buttons';
 import { TabsModule } from 'ngx-bootstrap/tabs';
 import { NgxGalleryModule } from '@kolkov/ngx-gallery';
-// import {TimeAgoPipe} from 'time-ago-pipe';
+import {TimeAgoPipe} from 'time-ago-pipe';
 
 import { RouterModule } from '@angular/router';
 import { JwtModule } from '@auth0/angular-jwt';
@@ -41,11 +41,11 @@ import { ListsResolver } from './_resolvers/lists.resolver';
 import { MessagesResolver } from './_resolvers/messages.resolver';
 import { MemberMessagesComponent } from './members/member-messages/member-messages.component';
 
-// @Pipe({
-//    name: 'timeAgo',
-//    pure: true
-// })
-// export class TimeAgoExtendsPipe extends TimeAgoPipe {}
+@Pipe({
+   name: 'timeAgo',
+   pure: true
+})
+export class TimeAgoExtendsPipe extends TimeAgoPipe {}
 
 export function tokenGetter(){
    return localStorage.getItem('token');
@@ -71,7 +71,7 @@ export class CustomHammerConfig extends HammerGestureConfig {
       MemberDetailComponent,
       MemberEditComponent,
       PhotoEditorComponent,
-      // TimeAgoExtendsPipe,
+      TimeAgoExtendsPipe,
       MemberMessagesComponent
    ],
    imports: [
